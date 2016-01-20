@@ -1,4 +1,7 @@
-def helloPython():
-	print 'Hello Python!!'
+class HelloPython(object):
+	def helloPython(self):
+		print 'Hello Python!!'
 
-helloPython()
+
+hello_python = HelloPython()
+hello_python.helloPython()
