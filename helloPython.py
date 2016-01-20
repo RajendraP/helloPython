@@ -1,4 +1,7 @@
 class HelloPython(object):
+	'''
+	hello world in python
+	'''
 	def helloPython(self):
 		print 'Hello Python!!'
 
