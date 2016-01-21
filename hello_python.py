@@ -1,3 +1,4 @@
+# pylint: disable=R0201
 '''
 @author: rajendrap
 '''
@@ -19,6 +20,6 @@ class HelloPython(object):
         print user_name
 
 
-hello_python = HelloPython()
-hello_python.hello_python()
-hello_python.hello_user('Peter')
+HELLOPYTHON = HelloPython()
+HELLOPYTHON.hello_python()
+HELLOPYTHON.hello_user('Peter')
