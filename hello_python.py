@@ -1,25 +1,35 @@
-# pylint: disable=R0201
-'''
+"""
+The mod module
 @author: rajendrap
-'''
+"""
+
 class HelloPython(object):
-    '''
+    """
     hello world in python
-    '''
-    def __init__(self):
-        pass
+    """
+    def __init__(self, user_name=None, user_age=None):
+        self.user_name = user_name
+        self.user_age = user_age
+    def hello_user(self):
+        """
+    	A method defination, always called with instance, requires to pass self.
+    	"""
+        print self.user_name
     def hello_python(self):
-        '''
-        method doc string
-        '''
-        print 'Hello Python!!'
-    def hello_user(self, user_name):
-        '''
-    	print hello with user name
-    	'''
-        print user_name
+        """
+        A method defination, always called with instance, requires to pass self.
+        """
+        print self.user_name
+
+def hello_python():
+    """
+    A function defination, doesn't require instance to call.
+    """
+    print 'Hello Python!!'
 
 
-HELLOPYTHON = HelloPython()
-HELLOPYTHON.hello_python()
-HELLOPYTHON.hello_user('Peter')
+HELLOPYTHON = HelloPython('Peter')
+HELLOPYTHON.hello_user()
+
+hello_python()
+
