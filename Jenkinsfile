@@ -7,7 +7,7 @@ node {
     }
     stage('Test') { 
         echoVar 'Test'
-        sh 'python3 -m pytest src/test/'
+        sh functional-tests
         // 
     }
     stage('Deploy') { 
