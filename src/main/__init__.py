@@ -1,1 +1,1 @@
-name = "pypi_example"
+name = "hello_world"
