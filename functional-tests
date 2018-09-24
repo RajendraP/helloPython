@@ -1,0 +1,4 @@
+#!/bin/bash
+
+python3 -m pytest src/test -s
+            --junitxml=test-results/TestResults.xml
