@@ -7,7 +7,7 @@ node {
     }
     stage('Test') { 
         echoVar 'Test'
-        sh 'pytest /src/test/'
+        sh 'python3 -m pytest src/test/'
         // 
     }
     stage('Deploy') { 
