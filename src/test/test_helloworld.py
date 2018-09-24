@@ -6,13 +6,13 @@ class TestHelloWorld(object):
         """
          HelloWorld positive test
         """
-        assert HelloWorld.say_hello(), 'Hello World'
+        assert HelloWorld.say_hello() == 'Hello World'
 
     def test_hello_world_failed(self):
         """
         HelloWorld -ve test
         """
-        assert HelloWorld.say_hello(), 'world'
+        assert HelloWorld.say_hello() == 'world'
 
     def test_hello_world_next_failed(self):
         """
