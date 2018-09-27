@@ -1,4 +1,4 @@
-from hello_python.src.main.hello_world import HelloWorld
+from src.main.hello_world import HelloWorld
 
 
 class TestHelloWorld(object):
