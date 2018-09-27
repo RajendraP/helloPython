@@ -1,15 +1,22 @@
 @Library('test@master') _
 
-node {  
-    stage('Build') { 
+node {
+    stage('Checkout'){
+
+          checkout scm
+       }
+
+    stage('Build') {
         echoVar 'Build'
-        // 
+        //
     }
-    stage('Test') { 
+    // node('Master'){
+    stage('Test') {
         echoVar 'Test'
-        sh functional-tests
-        // 
+        sh "./functional-tests"
+        //
     }
+    // }
     stage('Deploy') { 
         echoVar 'Deploy'
         // 
