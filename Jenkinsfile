@@ -1,3 +1,7 @@
+def jiraprojectName = 'IPF'
+def jiraComponent = 'bs35'
+def resultsfilePath = 'test-results/TestResults.xml'
+
 @Library('test@master') _
 
 node {
@@ -10,7 +14,7 @@ node {
         echoVar 'Build'
         //
     }
-    // node('Master'){
+
     stage('Test') {
         echoVar 'Test'
         try{
@@ -18,12 +22,12 @@ node {
             sh "./functional-tests"
         }
         finally {
-            archiveArtifacts artifacts: '*.log'
+            //archiveArtifacts artifacts: '*.log'
             junit 'test-results/*.xml'
         }
+        jira jiraprojectName, jiraComponent, resultsfilePath
         //
     }
-    // }
     stage('Deploy') { 
         echoVar 'Deploy'
         // 
