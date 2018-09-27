@@ -13,7 +13,12 @@ node {
     // node('Master'){
     stage('Test') {
         echoVar 'Test'
+        sh "mkdir -p test-results"
         sh "./functional-tests"
+        finally {
+            archiveArtifacts artifacts: '*.log'
+            junit 'test-results/*.xml'
+        }
         //
     }
     // }
