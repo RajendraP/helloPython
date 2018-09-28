@@ -1,10 +1,11 @@
 def jiraprojectName = 'IPF'
 def jiraComponent = 'bs35'
-def resultsfilePath = 'test-results/TestResults.xml'
 
 @Library('test@master') _
 
 node {
+    def workspace = pwd();
+    def resultsfilePath = '${workspace}/test-results/TestResults.xml'
     stage('Checkout'){
 
           checkout scm
