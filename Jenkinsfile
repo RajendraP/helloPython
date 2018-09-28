@@ -5,7 +5,7 @@ def jiraComponent = 'bs35'
 
 node {
     def workspace = pwd();
-    def resultsfilePath = '${workspace}/test-results/TestResults.xml'
+    def resultsfilePath = "${workspace}/test-results/TestResults.xml"
     stage('Checkout'){
 
           checkout scm
