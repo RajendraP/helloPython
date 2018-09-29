@@ -20,7 +20,7 @@ node {
     stage('Build') {
         echoVar 'Build'
         //
-        input 'Ready to go?'
+        //input 'Ready to go?'
     }
 
     stage('Test') {
