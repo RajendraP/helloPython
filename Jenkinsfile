@@ -9,7 +9,12 @@ node {
     stage('git checkout'){
 
          // checkout scm
-         git url: 'https://github.com/RajendraP/helloPython.git'
+         //git url: 'https://github.com/RajendraP/helloPython.git'
+         checkout scm: [$class: 'GitSCM', 
+         branches: [[name: '*/master']], 
+         userRemoteConfigs: [[url: 'https://github.com/RajendraP/helloPython.git']]]
+
+
        }
 
     stage('Build') {
