@@ -6,9 +6,10 @@ def jiraComponent = 'bs35'
 node {
     def workspace = pwd();
     def resultsfilePath = "${workspace}/test-results/TestResults.xml"
-    stage('Checkout'){
+    stage('git checkout'){
 
-          checkout scm
+         // checkout scm
+         git url: 'https://github.com/RajendraP/helloPython.git'
        }
 
     stage('Build') {
@@ -25,7 +26,7 @@ node {
         finally {
             //archiveArtifacts artifacts: '*.log'
             junit 'test-results/*.xml'
-            jira jiraprojectName, jiraComponent, resultsfilePath
+            //jira jiraprojectName, jiraComponent, resultsfilePath
         }
         //jira jiraprojectName, jiraComponent, resultsfilePath
         //
