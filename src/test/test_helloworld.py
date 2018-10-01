@@ -1,7 +1,11 @@
+import logging
 from src.main.hello_world import HelloWorld
 
 
 class TestHelloWorld(object):
+    logging.basicConfig(filename='hello_python.log', level=logging.INFO)
+    logging.info('Started')
+
     def test_hello_world(self):
         """
          HelloWorld positive test
@@ -19,3 +23,5 @@ class TestHelloWorld(object):
         HelloWorld another -ve test
         """
         assert HelloWorld.say_hello() == 'hello'
+
+    logging.info('Finished')
