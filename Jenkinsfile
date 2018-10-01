@@ -32,7 +32,7 @@ node {
         finally {
             //archiveArtifacts artifacts: '*.log'
             junit 'test-results/*.xml'
-            //jira jiraprojectName, jiraComponent, resultsfilePath
+            jira jiraprojectName, jiraComponent, resultsfilePath
         }
         //jira jiraprojectName, jiraComponent, resultsfilePath
         //
