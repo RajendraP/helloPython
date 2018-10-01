@@ -13,10 +13,7 @@ node {
          checkout scm: [$class: 'GitSCM', 
          branches: [[name: '*/master']], 
          userRemoteConfigs: [[url: 'https://github.com/RajendraP/helloPython.git']]]
-
-
        }
-
     stage('Build') {
         echoVar 'Build'
         //
