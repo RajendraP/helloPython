@@ -30,7 +30,7 @@ node {
             sh "./functional-tests"
         }
         finally {
-            //archiveArtifacts artifacts: '*.log'
+            archiveArtifacts artifacts: '*.log'
             junit 'test-results/*.xml'
             jira jiraprojectName, jiraComponent, resultsfilePath
         }
