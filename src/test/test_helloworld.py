@@ -14,8 +14,8 @@ class TestHelloWorld(object):
         """
         assert HelloWorld.say_hello() == 'world'
 
-    # def test_hello_world_next_failed(self):
-    #     """
-    #     HelloWorld another -ve test
-    #     """
-    #     assert HelloWorld.say_hello() == 'hello'
+    def test_hello_world_next_failed(self):
+        """
+        HelloWorld another -ve test
+        """
+        assert HelloWorld.say_hello() == 'hello'
