@@ -22,7 +22,7 @@ node {
         finally {
             archiveArtifacts artifacts: '*.log'
             junit 'test-results/*.xml'
-            jira jiraprojectName, jiraComponent, resultsfilePath, logsPath
+            jira jiraprojectName, jiraComponent, resultsfilePath, "${workspace}"
         }
     }
 }
