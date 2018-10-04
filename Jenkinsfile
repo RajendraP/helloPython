@@ -28,7 +28,7 @@ node {
             sh "./functional-tests"
         }
         finally {
-            jira jiraprojectName, jiraComponent,labels, resultsfilePath, "${workspace}"
+            jira jiraprojectName, jiraComponent, labels, resultsfilePath, "${workspace}"
             archiveArtifacts artifacts: '*.log, test-results/*.xml'
             junit 'test-results/*.xml'
 
