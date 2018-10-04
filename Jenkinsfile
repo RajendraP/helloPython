@@ -1,18 +1,25 @@
 def jiraprojectName = 'IPF'
 def jiraComponent = 'bs35'
 
-@Library('test@master') _
+@Library('test@add_jiraId') _
 
 node {
     def workspace = pwd();
     def resultsfilePath = "${workspace}/test-results/TestResults.xml"
     stage('git checkout'){
+
          // checkout scm
          //git url: 'https://github.com/RajendraP/helloPython.git'
-         checkout scm: [$class: 'GitSCM', 
-         branches: [[name: '*/master']], 
+         checkout scm: [$class: 'GitSCM',
+         branches: [[name: '*/master']],
          userRemoteConfigs: [[url: 'https://github.com/RajendraP/helloPython.git']]]
-       }
+      }
+    stage('Build') {
+        echoVar 'Build'
+        //
+        //input 'Ready to go?'
+    }
+
     stage('Test') {
         echoVar 'Test'
         try{
@@ -20,9 +27,16 @@ node {
             sh "./functional-tests"
         }
         finally {
-            archiveArtifacts artifacts: '*.log'
-            junit 'test-results/*.xml'
             jira jiraprojectName, jiraComponent, resultsfilePath, "${workspace}"
+            archiveArtifacts artifacts: '*.log, test-results/*.xml'
+            junit 'test-results/*.xml'
+
         }
+        //jira jiraprojectName, jiraComponent, resultsfilePath
+        //
+    }
+    stage('Deploy') {
+        echoVar 'Deploy'
+        //
     }
 }
