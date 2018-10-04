@@ -1,5 +1,6 @@
 def jiraprojectName = 'IPF'
 def jiraComponent = 'bs35'
+def labels = ['PipelineBug', 'BugfromJenkins']
 
 @Library('test@add_jiraId') _
 
@@ -27,13 +28,11 @@ node {
             sh "./functional-tests"
         }
         finally {
-            jira jiraprojectName, jiraComponent, resultsfilePath, "${workspace}"
+            jira jiraprojectName, jiraComponent,labels, resultsfilePath, "${workspace}"
             archiveArtifacts artifacts: '*.log, test-results/*.xml'
             junit 'test-results/*.xml'
 
         }
-        //jira jiraprojectName, jiraComponent, resultsfilePath
-        //
     }
     stage('Deploy') {
         echoVar 'Deploy'
