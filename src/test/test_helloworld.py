@@ -1,5 +1,6 @@
 import logging
 from src.main.hello_world import HelloWorld
+from hamcrest import assert_that, equal_to
 
 
 class TestHelloWorld(object):
@@ -22,6 +23,6 @@ class TestHelloWorld(object):
         """
         HelloWorld another -ve test
         """
-        assert HelloWorld.say_hello() == 'hello', 'message'
+        assert_that(HelloWorld.say_hello(), equal_to('hello'), '{} {}'.format(HelloWorld.say_hello(), 'hello'))
 
     logging.info('Finished')
