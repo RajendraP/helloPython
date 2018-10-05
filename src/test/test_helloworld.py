@@ -22,6 +22,6 @@ class TestHelloWorld(object):
         """
         HelloWorld another -ve test
         """
-        assert HelloWorld.say_hello() == 'hello'
+        assert HelloWorld.say_hello() == 'hello', 'message'
 
     logging.info('Finished')
