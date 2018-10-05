@@ -1,6 +1,6 @@
 def jiraprojectName = 'IPF'
 def jiraComponent = 'bs35'
-def labels = ['PipelineBug', 'BugfromJenkins']
+def String[] labels = ['PipelineBug', 'BugfromJenkins']
 
 @Library('test@add_jiraId') _
 
