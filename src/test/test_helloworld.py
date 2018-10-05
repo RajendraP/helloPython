@@ -17,12 +17,27 @@ class TestHelloWorld(object):
         """
         HelloWorld -ve test
         """
-        assert HelloWorld.say_hello() == 'world'
+        assert HelloWorld.say_hello() == 'world', 'Hello World'
 
     def test_hello_world_next_failed(self):
         """
         HelloWorld another -ve test
         """
         assert_that(HelloWorld.say_hello(), equal_to('hello'), '{} {}'.format(HelloWorld.say_hello(), 'hello'))
+
+    logging.info('Finished')
+
+    def test_hello_world_1(self):
+        """
+         HelloWorld positive test
+        """
+        assert HelloWorld.say_hello() == 'HelloWorld'
+
+
+    def test_hello_world_next_failed_2(self):
+        """
+        HelloWorld another -ve test
+        """
+        assert_that(HelloWorld.say_hello(), equal_to('hello'), '{} '.format('hello'))
 
     logging.info('Finished')
