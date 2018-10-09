@@ -38,7 +38,7 @@ class TestHelloWorld(object):
 
     def test_hello_world_next_failed_2(self):
         """
-        HelloWorld another -ve test
+        HelloWorld another -ve test 2 failed
         """
         assert_that(HelloWorld.say_hello(), equal_to('hello'), '{} '.format('hello'))
 
