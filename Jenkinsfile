@@ -1,6 +1,3 @@
-def jiraprojectName = 'IPF'
-def jiraComponent = 'bs35'
-def String[] labels = ['PipelineBug', 'BugfromJenkins']
 
 @Library('test@add_jiraId') _
 
@@ -28,7 +25,6 @@ node {
             sh "./functional-tests"
         }
         finally {
-            raiseJiraTickets jiraComponent, resultsfilePath
             archiveArtifacts artifacts: '*.log, test-results/*.xml'
             junit 'test-results/*.xml'
 
