@@ -27,6 +27,10 @@ node {
         finally {
             archiveArtifacts artifacts: '*.log, test-results/*.xml, htmlcov/*.*, coverage.xml'
             junit 'test-results/*.xml'
+            
+            cobertura coberturaReportFile: 'coverage.xml'
+
+
 
         }
     }
