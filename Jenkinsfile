@@ -21,6 +21,7 @@ node {
     stage('Test') {
         echoVar 'Test'
         try{
+            sh "pylint src/ || true"
             sh "mkdir -p test-results"
             sh "./functional-tests"
         }
