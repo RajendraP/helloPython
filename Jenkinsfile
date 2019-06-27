@@ -25,7 +25,7 @@ node {
             sh "./functional-tests"
         }
         finally {
-            archiveArtifacts artifacts: '*.log, test-results/*.xml'
+            archiveArtifacts artifacts: '*.log, test-results/*.xml, htmlcov/*.*, coverage.xml'
             junit 'test-results/*.xml'
 
         }
