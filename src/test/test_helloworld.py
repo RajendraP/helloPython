@@ -1,5 +1,5 @@
 import logging
-from src.main.hello_world import HelloWorld
+from helloPython.src.main.hello_world import HelloPython
 from hamcrest import assert_that, equal_to
 
 
@@ -11,7 +11,7 @@ class TestHelloWorld(object):
         """
          HelloWorld positive test
         """
-        assert HelloWorld.say_hello() == 'Hello World'
+        assert HelloPython(user_name='raj', user_age='25').hello_python() == 'raj'
 
     # def test_hello_world_failed(self):
     #     """
@@ -27,7 +27,9 @@ class TestHelloWorld(object):
         """
         HelloWorld another -ve test
         """
-        assert_that(HelloWorld.say_hello(), equal_to('hello'), '{} {}'.format(HelloWorld.say_hello(), 'hello'))
+
+    assert_that(HelloPython(user_name='raj', user_age='25').hello_python(), equal_to('hello'),
+                '{} {}'.format(HelloPython(user_name='raj', user_age='25').hello_python(), 'hello'))
 
     logging.info('Finished')
 
@@ -42,6 +44,8 @@ class TestHelloWorld(object):
         """
         HelloWorld another -ve test 2 failed
         """
-        assert_that(HelloWorld.say_hello(), equal_to('hello'), '{} '.format('hello'))
+        assert_that(HelloPython(user_name='raj', user_age='25').hello_python(), equal_to('hello'),
+                    '{} {}'.format(HelloPython(user_name='raj', user_age='25').hello_python(),
+                                   'hello'))
 
     logging.info('Finished')

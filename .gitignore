@@ -4,6 +4,8 @@
 *.html
 *.xml
 __pycache__
-*.pytest_cache
-
-
+**/.pytest_cache
+*,cover
+.coverage
+htmlcov
+src/docs/build/doctrees
