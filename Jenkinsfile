@@ -21,17 +21,14 @@ node {
     stage('Test') {
         echoVar 'Test'
         try{
+            sh "pylint src/ || true"
             sh "mkdir -p test-results"
             sh "./functional-tests"
         }
         finally {
             archiveArtifacts artifacts: '*.log, test-results/*.xml, htmlcov/*.*, coverage.xml'
             junit 'test-results/*.xml'
-            
             cobertura coberturaReportFile: 'coverage.xml'
-
-
-
         }
     }
     stage('Deploy') {
